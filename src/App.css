@@ -1,38 +1,116 @@
 .App {
+  width: 50%;
+  margin: auto;
+}
+.av {
   text-align: center;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+.forms {
+  margin-top: 5%;
+}
+.checks {
+  border: 1px solid #dee2e6;
+  padding: 0.375rem 2rem;
+  border-radius: 0.375rem;
+  /* border-color: black; */
+  margin-top: 0.8rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.fine-uploader-dropzone-container {
+  border-color: #dedede !important;
+  color: #2d2d2d !important;
+  border-radius: 7px !important;
+}
+.size {
+  text-align: start;
+  text-transform: none;
+  text-decoration: dotteds;
+  font-size: small;
+}
+.button {
+  background-color: black;
+  border: #2d2d2d;
+  padding: 15px 38px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 15%;
+  height: 15%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.drop-container {
+  width: 600px;
+  border: 5px dotted #000;
+  padding: 12px 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.drop-container.disabled {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.drop-container div {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.drop-container span {
+  font-size: 12px;
 }
 
-@keyframes App-logo-spin {
+@media screen and (max-width: 768px) {
+  .drop-container {
+    width: 300px;
+  }
+  .App {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .App {
+    width: 90%;
+  }
+}
+
+.content {
+  top: 10%;
+  left: 35%;
+  position: absolute;
+}
+.circle {
+  stroke-dasharray: 1194;
+  stroke-dashoffset: 1194;
+  animation: dc 1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+.tick {
+  stroke-dasharray: 350;
+  stroke-dashoffset: 350;
+  animation: dt 0.8s ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 0.95s;
+}
+@keyframes dc {
   from {
-    transform: rotate(0deg);
+    stroke-dashoffset: 1194;
   }
   to {
-    transform: rotate(360deg);
+    stroke-dashoffset: 2388;
+  }
+}
+@keyframes dt {
+  from {
+    stroke-dashoffset: 350;
+  }
+  to {
+    stroke-dashoffset: 0;
   }
 }
